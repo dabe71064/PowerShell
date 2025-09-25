@@ -2160,7 +2160,6 @@ function Install-Dotnet {
         Remove-Item -ErrorAction SilentlyContinue -Recurse -Force ~\AppData\Local\Microsoft\dotnet
         $installScript = "dotnet-install.ps1"
         Invoke-WebRequest -Uri $installObtainUrl/$installScript -OutFile $installScript
-
         if (-not $environment.IsCoreCLR) {
             $installArgs = @{}
             if ($Version) {
